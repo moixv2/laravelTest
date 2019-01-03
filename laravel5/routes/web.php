@@ -16,19 +16,29 @@
 });*/
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('vue1');
-});
+});*/
+
+/* liaison entre les routes et les contrôleurs*/
+
+// Route de welcome pour faire la liaison avec WelcomeController
+
+Route::get('/', 'WelcomeController@index');
+
+/***************/
 
 
 Route::get('{n}', function($n) {
     return Response::make('Je suis la page ' . $n . ' !', 200);
 })->where('n', '[1-3]');
 
-Route::get('article/{n}', function($n) {
-    return redirect('article')->with('numero', $n);
-})->where('n', '[0-9]+');
+// Route de Article pour faire la liaison avec ArticleController
 
-Route::get('facture/{n}', function($n) {
-    return view('facture')->with('numero', $n);
-})->where('n', '[0-9]+');
+Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+/*******************************************/
+
+// Route de facture pour faire la liaison avec FactureController
+
+Route::get('facture/{n}', 'FactureController@show')->where('n', '[0-9]+');
