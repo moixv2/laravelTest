@@ -42,3 +42,6 @@ Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
 // Route de facture pour faire la liaison avec FactureController
 
 Route::get('facture/{n}', 'FactureController@show')->where('n', '[0-9]+');
+
+Route::get('users', 'UsersController@getInfos');
+Route::post('users', 'UsersController@postInfos');

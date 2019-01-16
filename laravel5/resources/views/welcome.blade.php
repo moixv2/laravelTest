@@ -88,6 +88,8 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <!-- test lien-->
+                    <a href="{{ url('/home') }}">Home</a>
                 </div>
             </div>
         </div>
