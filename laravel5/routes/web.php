@@ -55,4 +55,4 @@ Route::post('contact', 'ContactController@postForm');
 // Route de photo (session)
 
 Route::get('photo', 'PhotoController@getForm');
-Route::post('photo', 'PhotoController@postForm');
+Route::post('photo','PhotoController@postForm');
