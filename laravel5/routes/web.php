@@ -43,8 +43,16 @@ Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
 
 Route::get('facture/{n}', 'FactureController@show')->where('n', '[0-9]+');
 
+// Route de users
 Route::get('users', 'UsersController@getInfos');
 Route::post('users', 'UsersController@postInfos');
 
+//Route de contact (validation)
+
 Route::get('contact', 'ContactController@getForm');
 Route::post('contact', 'ContactController@postForm');
+
+// Route de photo (session)
+
+Route::get('photo', 'PhotoController@getForm');
+Route::post('photo', 'PhotoController@postForm');
