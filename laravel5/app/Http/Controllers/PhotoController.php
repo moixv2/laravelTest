@@ -14,7 +14,7 @@ class PhotoController extends Controller
     public function postForm(ImagesRequest $request)
     {
       $image = $request->file('image');
-
+      
       if($image->isValid()) {
 
         $chemin = config('images.path');

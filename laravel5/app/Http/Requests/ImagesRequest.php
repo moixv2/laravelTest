@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Log;
 
 class ImagesRequest extends FormRequest
 {
@@ -13,6 +14,7 @@ class ImagesRequest extends FormRequest
      */
     public function authorize()
     {
+        
         return true;
     }
 
@@ -23,8 +25,6 @@ class ImagesRequest extends FormRequest
      */
     public function rules()
     {
-        return ['images'=>'required|image'
-            //
-        ];
+        return ['image'=>'required|image'];
     }
 }

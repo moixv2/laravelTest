@@ -1,9 +1,2 @@
 <?php
-
-return[
-  'path' => 'uploads',
-
-
-
-
-];
+return [ 'path' => 'uploads' ];
