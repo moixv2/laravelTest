@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ImagesRequest;
+use App\Gestion\PhotoGestionInterface;
+
 
 class PhotoController extends Controller
 {
@@ -11,25 +13,20 @@ class PhotoController extends Controller
       return view('photo');
     }
 
-    public function postForm(ImagesRequest $request)
+    public function postForm(
+      ImagesRequest $request,
+      PhotoGestionInterface $photogestion
+      )
+
     {
       $image = $request->file('image');
       
-      if($image->isValid()) {
+     
 
-        $chemin = config('images.path');
-
-        $extension = $image->getClientOriginalExtension();
-
-        do {
-
-          $nom=str_random(10) . '.' . $extension;
-        } while (file_exists($chemin . '/' . $nom));
-
-        if ($image->move($chemin, $nom)) {
-          return View('photoOk');
-        }
+      if ($photogestion->save($request->file('image'))) {
+        return View('photoOk');
       }
+
       return redirect('photo')
         ->with('error', 'Désolé mais votre image ne peut être envoyé');
     }
