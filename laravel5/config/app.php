@@ -40,6 +40,8 @@ return [
     */
 
     'debug' => env('APP_DEBUG', true),
+    'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
 
     /*
     |--------------------------------------------------------------------------

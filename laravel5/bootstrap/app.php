@@ -1,5 +1,13 @@
 <?php
 
+if (env('APP_DEBUG')) {
+ $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
+}
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
